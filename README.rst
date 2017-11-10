@@ -101,7 +101,7 @@ The documentation is available on the |PyMetrologyHomePage|_.
 What are the main features ?
 ----------------------------
 
-* ...
+* to be completed
 
 How to install it ?
 -------------------
