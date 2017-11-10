@@ -89,7 +89,9 @@ Overview
 What is PyMetrology ?
 ---------------------
 
-PyMetrology is a Python module which
+**Note: source code was extracted from PySpice, in development ...**
+
+PyMetrology is a Python module which implements a unit framework.
 
 Where is the Documentation ?
 ----------------------------
