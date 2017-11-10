@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1. PyMetrology &mdash; PyMetrology 1. documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/PyMetrology.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyMetrology 1. documentation" href="../index.html"/>
+        <link rel="up" title="7. API Documentation" href="../reference-manual.html"/>
+        <link rel="next" title="7.1.1. Config" href="PyMetrology/Config.html"/>
+        <link rel="prev" title="7. API Documentation" href="../reference-manual.html"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right"
+})});
+</script>
+
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyMetrology
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">2. News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">5. User FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design-notes.html">6. Design Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1. <code class="docutils literal"><span class="pre">PyMetrology</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyMetrology/Config.html">7.1.1. <code class="docutils literal"><span class="pre">Config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyMetrology/Logging.html">7.1.2. <code class="docutils literal"><span class="pre">Logging</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyMetrology/SiUnits.html">7.1.3. <code class="docutils literal"><span class="pre">SiUnits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyMetrology/Unit.html">7.1.4. <code class="docutils literal"><span class="pre">Unit</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">8. Development &amp; Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-refer.html">9. How to Refer to PyMetrology ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-projects.html">11. Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">12. Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyMetrology</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+      <li>7.1. <code class="docutils literal"><span class="pre">PyMetrology</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/PyMetrology.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pymetrology">
+<h1>7.1. <a class="reference internal" href="#module-PyMetrology" title="PyMetrology"><code class="xref py py-mod docutils literal"><span class="pre">PyMetrology</span></code></a><a class="headerlink" href="#pymetrology" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PyMetrology/Config.html">7.1.1. <code class="docutils literal"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyMetrology/Config/ConfigInstall.html">7.1.1.1. <code class="docutils literal"><span class="pre">ConfigInstall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyMetrology/Logging.html">7.1.2. <code class="docutils literal"><span class="pre">Logging</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyMetrology/Logging/Logging.html">7.1.2.1. <code class="docutils literal"><span class="pre">Logging</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyMetrology/SiUnits.html">7.1.3. <code class="docutils literal"><span class="pre">SiUnits</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyMetrology/Unit.html">7.1.4. <code class="docutils literal"><span class="pre">Unit</span></code></a></li>
+</ul>
+</div>
+<span class="target" id="module-PyMetrology"></span><p>This module implements units.</p>
+<p>Shortcuts are defined to build unit values easily :</p>
+<blockquote>
+<div><ul class="simple">
+<li>for each unit prefix, e.g. <a class="reference internal" href="#PyMetrology.pico" title="PyMetrology.pico"><code class="xref py py-func docutils literal"><span class="pre">pico()</span></code></a>, <a class="reference internal" href="#PyMetrology.nano" title="PyMetrology.nano"><code class="xref py py-func docutils literal"><span class="pre">nano()</span></code></a>, <a class="reference internal" href="#PyMetrology.micro" title="PyMetrology.micro"><code class="xref py py-func docutils literal"><span class="pre">micro()</span></code></a>, <a class="reference internal" href="#PyMetrology.milli" title="PyMetrology.milli"><code class="xref py py-func docutils literal"><span class="pre">milli()</span></code></a>, <a class="reference internal" href="#PyMetrology.kilo" title="PyMetrology.kilo"><code class="xref py py-func docutils literal"><span class="pre">kilo()</span></code></a>,
+<a class="reference internal" href="#PyMetrology.mega" title="PyMetrology.mega"><code class="xref py py-func docutils literal"><span class="pre">mega()</span></code></a>, <a class="reference internal" href="#PyMetrology.tera" title="PyMetrology.tera"><code class="xref py py-func docutils literal"><span class="pre">tera()</span></code></a>. These shortcuts return unit less values.</li>
+<li>for each unit and prefix as the concatenation of <em>u_</em>, the unit prefix and the
+unit suffix, e.g. <code class="xref py py-func docutils literal"><span class="pre">u_pV()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">u_nV()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">u_uV()</span></code> <code class="xref py py-func docutils literal"><span class="pre">u_mV()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">u_V()</span></code>,
+<code class="xref py py-func docutils literal"><span class="pre">u_kV()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">u_MV()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">u_TV()</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>Theses unit value constructors accept int, float, object that can be converted to float,
+<code class="xref py py-class docutils literal"><span class="pre">UnitValue</span></code> instance and an iterable on these types.</p>
+<p>A shortcut is defined to check an unit value match a particular unit, e.g. <code class="xref py py-func docutils literal"><span class="pre">as_V()</span></code>.  Theses
+shortcuts return the value if the unit match else it raises the exception <em>UnitError</em>.</p>
+<p>A shortcut is defined to access each unit, e.g. <code class="xref py py-func docutils literal"><span class="pre">U_V()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">U_A()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">U_s()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">U_Hz()</span></code>,
+<code class="xref py py-func docutils literal"><span class="pre">U_Ω()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">U_F()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">U_H.()</span></code>, as well as for prefixes e.g. <code class="xref py py-func docutils literal"><span class="pre">U_mV()</span></code>.</p>
+<p>Some shortcuts have Unicode and ASCII variants:</p>
+<blockquote>
+<div><ul class="simple">
+<li>For micro, we have the prefix <em>μ</em> and <em>u</em>.</li>
+<li>For Ohm, we have <code class="xref py py-func docutils literal"><span class="pre">u_Ω()</span></code> and <code class="xref py py-func docutils literal"><span class="pre">u_Ohm()</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>Some examples of usage:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">kilo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># unit less</span>
+
+<span class="n">resistance_unit</span> <span class="o">=</span> <span class="n">U_Ω</span>
+
+<span class="n">resistance1</span> <span class="o">=</span> <span class="n">u_kΩ</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">resistance1</span> <span class="o">=</span> <span class="n">u_kOhm</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># ASCII variant</span>
+
+<span class="n">resistance1</span> <span class="o">=</span> <span class="mi">1</span><span class="nd">@u_kΩ</span>   <span class="c1"># using Python 3.5 syntax</span>
+<span class="n">resistance1</span> <span class="o">=</span> <span class="mi">1</span> <span class="nd">@u_kΩ</span>  <span class="c1"># space doesn&#39;t matter</span>
+<span class="n">resistance1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">@</span> <span class="n">u_kΩ</span> <span class="c1">#</span>
+
+<span class="n">resistance2</span> <span class="o">=</span> <span class="n">as_Ω</span><span class="p">(</span><span class="n">resistance1</span><span class="p">)</span> <span class="c1"># check unit</span>
+
+<span class="n">resistances</span> <span class="o">=</span> <span class="n">u_kΩ</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span> <span class="c1"># same as [u_kΩ(x) for x in range(1, 11)]</span>
+<span class="n">resistances</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span><span class="nd">@u_kΩ</span>  <span class="c1"># using Python 3.5 syntax</span>
+
+<span class="n">capacitance</span> <span class="o">=</span> <span class="n">u_uF</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">inductance</span> <span class="o">=</span> <span class="n">u_mH</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">u_Degree</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">resistance1</span> <span class="o">*</span> <span class="n">u_mA</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># compute unit</span>
+
+<span class="n">frequency</span> <span class="o">=</span> <span class="n">u_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">frequency</span>
+<span class="n">period</span> <span class="o">=</span> <span class="n">u_Hz</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">period</span>
+<span class="n">pulsation</span> <span class="o">=</span> <span class="n">frequency</span><span class="o">.</span><span class="n">pulsation</span>
+<span class="n">pulsation</span> <span class="o">=</span> <span class="n">period</span><span class="o">.</span><span class="n">pulsation</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="PyMetrology.FrequencyValue">
+<em class="property">class </em><code class="descclassname">PyMetrology.</code><code class="descname">FrequencyValue</code><span class="sig-paren">(</span><em>prefixed_unit</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/PyMetrology.html#FrequencyValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.FrequencyValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="PyMetrology/Unit.html#PyMetrology.Unit.UnitValue" title="PyMetrology.Unit.UnitValue"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.UnitValue</span></code></a>, <a class="reference internal" href="PyMetrology/Unit.html#PyMetrology.Unit.FrequencyMixin" title="PyMetrology.Unit.FrequencyMixin"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.FrequencyMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.PeriodValue">
+<em class="property">class </em><code class="descclassname">PyMetrology.</code><code class="descname">PeriodValue</code><span class="sig-paren">(</span><em>prefixed_unit</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/PyMetrology.html#PeriodValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.PeriodValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="PyMetrology/Unit.html#PyMetrology.Unit.UnitValue" title="PyMetrology.Unit.UnitValue"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.UnitValue</span></code></a>, <a class="reference internal" href="PyMetrology/Unit.html#PyMetrology.Unit.PeriodMixin" title="PyMetrology.Unit.PeriodMixin"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.PeriodMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.UnitValueShorcut">
+<em class="property">class </em><code class="descclassname">PyMetrology.</code><code class="descname">UnitValueShorcut</code><span class="sig-paren">(</span><em>prefixed_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/PyMetrology.html#UnitValueShorcut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.UnitValueShorcut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.atto">
+<code class="descclassname">PyMetrology.</code><code class="descname">atto</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.atto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.deca">
+<code class="descclassname">PyMetrology.</code><code class="descname">deca</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.deca" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.define_shortcut">
+<code class="descclassname">PyMetrology.</code><code class="descname">define_shortcut</code><span class="sig-paren">(</span><em>name</em>, <em>shortcut</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/PyMetrology.html#define_shortcut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.define_shortcut" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.exa">
+<code class="descclassname">PyMetrology.</code><code class="descname">exa</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.exa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.femto">
+<code class="descclassname">PyMetrology.</code><code class="descname">femto</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.femto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.giga">
+<code class="descclassname">PyMetrology.</code><code class="descname">giga</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.giga" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.hecto">
+<code class="descclassname">PyMetrology.</code><code class="descname">hecto</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.hecto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.kilo">
+<code class="descclassname">PyMetrology.</code><code class="descname">kilo</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.kilo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.mega">
+<code class="descclassname">PyMetrology.</code><code class="descname">mega</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.mega" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.micro">
+<code class="descclassname">PyMetrology.</code><code class="descname">micro</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.micro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.milli">
+<code class="descclassname">PyMetrology.</code><code class="descname">milli</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.milli" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.nano">
+<code class="descclassname">PyMetrology.</code><code class="descname">nano</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.nano" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.peta">
+<code class="descclassname">PyMetrology.</code><code class="descname">peta</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.peta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.pico">
+<code class="descclassname">PyMetrology.</code><code class="descname">pico</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.pico" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.tera">
+<code class="descclassname">PyMetrology.</code><code class="descname">tera</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.tera" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.yocto">
+<code class="descclassname">PyMetrology.</code><code class="descname">yocto</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.yocto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.yotta">
+<code class="descclassname">PyMetrology.</code><code class="descname">yotta</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.yotta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.zepto">
+<code class="descclassname">PyMetrology.</code><code class="descname">zepto</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.zepto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="PyMetrology.zetta">
+<code class="descclassname">PyMetrology.</code><code class="descname">zetta</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#PyMetrology.zetta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PyMetrology/Config.html" class="btn btn-neutral float-right" title="7.1.1. Config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../reference-manual.html" class="btn btn-neutral" title="7. API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fabrice Salvaire.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/hidecode.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.fabrice-salvaire.fr/";
+    _paq.push(['setTrackerUrl', u+'kiwi']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'kiwi.js';
+  s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://stats.fabrice-salvaire.fr/kiwi?idsite=6&rec=1" style="border:0;" alt="" /></p></noscript>
+
+
+</body>
+</html>

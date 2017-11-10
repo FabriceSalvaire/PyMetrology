@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.4. Unit &mdash; PyMetrology 1. documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/PyMetrology.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PyMetrology 1. documentation" href="../../index.html"/>
+        <link rel="up" title="7.1. PyMetrology" href="../PyMetrology.html"/>
+        <link rel="next" title="8. Development &amp; Community" href="../../development.html"/>
+        <link rel="prev" title="7.1.3. SiUnits" href="SiUnits.html"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right"
+})});
+</script>
+
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyMetrology
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">2. News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">5. User FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design-notes.html">6. Design Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../PyMetrology.html">7.1. <code class="docutils literal"><span class="pre">PyMetrology</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Config.html">7.1.1. <code class="docutils literal"><span class="pre">Config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">7.1.2. <code class="docutils literal"><span class="pre">Logging</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="SiUnits.html">7.1.3. <code class="docutils literal"><span class="pre">SiUnits</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.1.4. <code class="docutils literal"><span class="pre">Unit</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">8. Development &amp; Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to-refer.html">9. How to Refer to PyMetrology ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../related-projects.html">11. Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">12. Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyMetrology</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../PyMetrology.html">7.1. <code class="docutils literal"><span class="pre">PyMetrology</span></code></a> &raquo;</li>
+        
+      <li>7.1.4. <code class="docutils literal"><span class="pre">Unit</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api/PyMetrology/Unit.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-PyMetrology.Unit">
+<span id="unit"></span><h1>7.1.4. <code class="xref py py-mod docutils literal"><span class="pre">Unit</span></code><a class="headerlink" href="#module-PyMetrology.Unit" title="Permalink to this headline">¶</a></h1>
+<p>This module implements units.</p>
+<p>A shortcut is defined for each unit prefix, e.g. <code class="xref py py-class docutils literal"><span class="pre">pico</span></code>, <code class="xref py py-class docutils literal"><span class="pre">nano</span></code>, <code class="xref py py-class docutils literal"><span class="pre">micro</span></code>,
+<code class="xref py py-class docutils literal"><span class="pre">milli</span></code>, <code class="xref py py-class docutils literal"><span class="pre">kilo</span></code>, <code class="xref py py-class docutils literal"><span class="pre">mega</span></code>, <code class="xref py py-class docutils literal"><span class="pre">tera</span></code>.</p>
+<dl class="class">
+<dt id="PyMetrology.Unit.FrequencyMixin">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">FrequencyMixin</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#FrequencyMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.FrequencyMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a frequency mixin.</p>
+<dl class="attribute">
+<dt id="PyMetrology.Unit.FrequencyMixin.period">
+<code class="descname">period</code><a class="headerlink" href="#PyMetrology.Unit.FrequencyMixin.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the period <span class="math">\(T = \frac{1}{f}\)</span>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.FrequencyMixin.pulsation">
+<code class="descname">pulsation</code><a class="headerlink" href="#PyMetrology.Unit.FrequencyMixin.pulsation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the pulsation <span class="math">\(\omega = 2\pi f\)</span>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.PeriodMixin">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">PeriodMixin</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PeriodMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PeriodMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a period mixin.</p>
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PeriodMixin.frequency">
+<code class="descname">frequency</code><a class="headerlink" href="#PyMetrology.Unit.PeriodMixin.frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the period <span class="math">\(f = \frac{1}{T}\)</span>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PeriodMixin.pulsation">
+<code class="descname">pulsation</code><a class="headerlink" href="#PyMetrology.Unit.PeriodMixin.pulsation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the pulsation <span class="math">\(\omega = \frac{2\pi}{T}\)</span>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.PrefixedUnit">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">PrefixedUnit</code><span class="sig-paren">(</span><em>unit=None</em>, <em>power=None</em>, <em>value_ctor=None</em>, <em>values_ctor=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a prefixed unit.</p>
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.check_unit">
+<code class="descname">check_unit</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.check_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.check_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.PrefixedUnit.from_prefixed_unit">
+<em class="property">classmethod </em><code class="descname">from_prefixed_unit</code><span class="sig-paren">(</span><em>unit</em>, <em>power=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.from_prefixed_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.from_prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.PrefixedUnit.from_si_unit">
+<em class="property">classmethod </em><code class="descname">from_si_unit</code><span class="sig-paren">(</span><em>si_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.from_si_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.from_si_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.is_same_power">
+<code class="descname">is_same_power</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.is_same_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.is_same_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.is_same_unit">
+<code class="descname">is_same_unit</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.is_same_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.is_same_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PrefixedUnit.is_unit_less">
+<code class="descname">is_unit_less</code><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.is_unit_less" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.new_value">
+<code class="descname">new_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.new_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.new_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PrefixedUnit.power">
+<code class="descname">power</code><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.PrefixedUnit.register">
+<em class="property">classmethod </em><code class="descname">register</code><span class="sig-paren">(</span><em>prefixed_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PrefixedUnit.scale">
+<code class="descname">scale</code><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.str">
+<code class="descname">str</code><span class="sig-paren">(</span><em>spice=False</em>, <em>unit=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.PrefixedUnit.str_spice">
+<code class="descname">str_spice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#PrefixedUnit.str_spice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.str_spice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.PrefixedUnit.unit">
+<code class="descname">unit</code><a class="headerlink" href="#PyMetrology.Unit.PrefixedUnit.unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.SiBaseUnit">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">SiBaseUnit</code><span class="sig-paren">(</span><em>si_unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiBaseUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiBaseUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#PyMetrology.Unit.Unit" title="PyMetrology.Unit.Unit"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.Unit</span></code></a></p>
+<p>This class implements an SI base unit.</p>
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiBaseUnit.is_base_unit">
+<em class="property">classmethod </em><code class="descname">is_base_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiBaseUnit.is_base_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiBaseUnit.is_base_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiBaseUnit.is_default_unit">
+<em class="property">classmethod </em><code class="descname">is_default_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiBaseUnit.is_default_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiBaseUnit.is_default_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.SiDerivedUnit">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">SiDerivedUnit</code><span class="sig-paren">(</span><em>string=None</em>, <em>powers=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a unit defined as powers of SI base units.</p>
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.cbrt">
+<code class="descname">cbrt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.cbrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.cbrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.SiDerivedUnit.hash">
+<code class="descname">hash</code><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.is_base_unit">
+<code class="descname">is_base_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.is_base_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.is_base_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.is_unit_less">
+<code class="descname">is_unit_less</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.is_unit_less"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.is_unit_less" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiDerivedUnit.new_powers">
+<em class="property">classmethod </em><code class="descname">new_powers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.new_powers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.new_powers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiDerivedUnit.parse_si">
+<em class="property">classmethod </em><code class="descname">parse_si</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.parse_si"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.parse_si" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.power">
+<code class="descname">power</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.SiDerivedUnit.powers">
+<code class="descname">powers</code><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.powers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.reciprocal">
+<code class="descname">reciprocal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.reciprocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.reciprocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.sqrt">
+<code class="descname">sqrt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.sqrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.SiDerivedUnit.square">
+<code class="descname">square</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.square"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.square" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.SiDerivedUnit.string">
+<code class="descname">string</code><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiDerivedUnit.to_hash">
+<em class="property">classmethod </em><code class="descname">to_hash</code><span class="sig-paren">(</span><em>powers</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.to_hash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.to_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.SiDerivedUnit.to_string">
+<em class="property">classmethod </em><code class="descname">to_string</code><span class="sig-paren">(</span><em>si_powers</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#SiDerivedUnit.to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.SiDerivedUnit.to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.Unit">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">Unit</code><span class="sig-paren">(</span><em>si_unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a unit.</p>
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.cbrt">
+<code class="descname">cbrt</code><span class="sig-paren">(</span><em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.cbrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.cbrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.divide">
+<code class="descname">divide</code><span class="sig-paren">(</span><em>other</em>, <em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.divide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.divide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.Unit.is_base_unit">
+<em class="property">classmethod </em><code class="descname">is_base_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.is_base_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.is_base_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.Unit.is_default_unit">
+<em class="property">classmethod </em><code class="descname">is_default_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.is_default_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.is_default_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.is_same_unit">
+<code class="descname">is_same_unit</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.is_same_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.is_same_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.Unit.is_unit_less">
+<code class="descname">is_unit_less</code><a class="headerlink" href="#PyMetrology.Unit.Unit.is_unit_less" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.multiply">
+<code class="descname">multiply</code><span class="sig-paren">(</span><em>other</em>, <em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.multiply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.multiply" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.power">
+<code class="descname">power</code><span class="sig-paren">(</span><em>exponent</em>, <em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.Unit.quantity">
+<code class="descname">quantity</code><a class="headerlink" href="#PyMetrology.Unit.Unit.quantity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.reciprocal">
+<code class="descname">reciprocal</code><span class="sig-paren">(</span><em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.reciprocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.reciprocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.Unit.si_unit">
+<code class="descname">si_unit</code><a class="headerlink" href="#PyMetrology.Unit.Unit.si_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.sqrt">
+<code class="descname">sqrt</code><span class="sig-paren">(</span><em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.sqrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.square">
+<code class="descname">square</code><span class="sig-paren">(</span><em>prefixed_unit=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.square"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.square" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.Unit.unit_name">
+<code class="descname">unit_name</code><a class="headerlink" href="#PyMetrology.Unit.Unit.unit_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.Unit.unit_suffix">
+<code class="descname">unit_suffix</code><a class="headerlink" href="#PyMetrology.Unit.Unit.unit_suffix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.Unit.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>value</em>, <em>none=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#Unit.validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.Unit.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="PyMetrology.Unit.UnitError">
+<em class="property">exception </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitError</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.UnitMetaclass">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitMetaclass</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#type" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">type</span></code></a></p>
+<p>Metaclass to register units</p>
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.from_hash">
+<em class="property">classmethod </em><code class="descname">from_hash</code><span class="sig-paren">(</span><em>hash_</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.from_hash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.from_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.from_prefix">
+<em class="property">classmethod </em><code class="descname">from_prefix</code><span class="sig-paren">(</span><em>prefix</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.from_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.from_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.from_si_unit">
+<em class="property">classmethod </em><code class="descname">from_si_unit</code><span class="sig-paren">(</span><em>si_unit</em>, <em>unique=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.from_si_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.from_si_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.init_unit">
+<em class="property">classmethod </em><code class="descname">init_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.init_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.init_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.register_unit">
+<em class="property">classmethod </em><code class="descname">register_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.register_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.register_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitMetaclass.unit_iter">
+<em class="property">classmethod </em><code class="descname">unit_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitMetaclass.unit_iter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitMetaclass.unit_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.UnitPrefix">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitPrefix</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a unit prefix like kilo</p>
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.is_defined_in_spice">
+<code class="descname">is_defined_in_spice</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.is_defined_in_spice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.is_unit">
+<code class="descname">is_unit</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.is_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.power">
+<code class="descname">power</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.prefix">
+<code class="descname">prefix</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.scale">
+<code class="descname">scale</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitPrefix.spice_prefix">
+<code class="descname">spice_prefix</code><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.spice_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitPrefix.str">
+<code class="descname">str</code><span class="sig-paren">(</span><em>spice=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefix.str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefix.str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.UnitPrefixMetaclass">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitPrefixMetaclass</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefixMetaclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefixMetaclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#type" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">type</span></code></a></p>
+<p>Metaclass to register unit prefixes</p>
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitPrefixMetaclass.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>power</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefixMetaclass.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefixMetaclass.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitPrefixMetaclass.prefix_iter">
+<em class="property">classmethod </em><code class="descname">prefix_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefixMetaclass.prefix_iter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefixMetaclass.prefix_iter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitPrefixMetaclass.register_prefix">
+<em class="property">classmethod </em><code class="descname">register_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitPrefixMetaclass.register_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitPrefixMetaclass.register_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.UnitValue">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitValue</code><span class="sig-paren">(</span><em>prefixed_unit</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>This class implements a value with a unit and a power (prefix).</p>
+<p>The value is not converted to float if the value is an int.</p>
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.canonise">
+<code class="descname">canonise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.canonise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.canonise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.clone_prefixed_unit">
+<code class="descname">clone_prefixed_unit</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.clone_prefixed_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.clone_prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.convert">
+<code class="descname">convert</code><span class="sig-paren">(</span><em>prefixed_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the value to another power.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.convert_to_power">
+<code class="descname">convert_to_power</code><span class="sig-paren">(</span><em>power=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.convert_to_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.convert_to_power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the value to another power.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.get_prefixed_unit">
+<code class="descname">get_prefixed_unit</code><span class="sig-paren">(</span><em>power=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.get_prefixed_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.get_prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.is_same_power">
+<code class="descname">is_same_power</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.is_same_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.is_same_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.is_same_unit">
+<code class="descname">is_same_unit</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.is_same_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.is_same_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValue.power">
+<code class="descname">power</code><a class="headerlink" href="#PyMetrology.Unit.UnitValue.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValue.prefixed_unit">
+<code class="descname">prefixed_unit</code><a class="headerlink" href="#PyMetrology.Unit.UnitValue.prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.reciprocal">
+<code class="descname">reciprocal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.reciprocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.reciprocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValue.scale">
+<code class="descname">scale</code><a class="headerlink" href="#PyMetrology.Unit.UnitValue.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitValue.simple_value">
+<em class="property">classmethod </em><code class="descname">simple_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.simple_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.simple_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.str">
+<code class="descname">str</code><span class="sig-paren">(</span><em>spice=False</em>, <em>space=False</em>, <em>unit=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.str_space">
+<code class="descname">str_space</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.str_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.str_space" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValue.str_spice">
+<code class="descname">str_spice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValue.str_spice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValue.str_spice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValue.unit">
+<code class="descname">unit</code><a class="headerlink" href="#PyMetrology.Unit.UnitValue.unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValue.value">
+<code class="descname">value</code><a class="headerlink" href="#PyMetrology.Unit.UnitValue.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.UnitValues">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">UnitValues</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></p>
+<p>This class implements a Numpy array with a unit and a power (prefix).</p>
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.CONVERSION">
+<code class="descname">CONVERSION</code><a class="headerlink" href="#PyMetrology.Unit.UnitValues.CONVERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ConversionType</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.UFUNC_MAP">
+<code class="descname">UFUNC_MAP</code><em class="property"> = {&lt;ufunc 'greater'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'minimum'&gt;: UNIT_MATCH, &lt;ufunc 'isnan'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'fmin'&gt;: UNIT_MATCH, &lt;ufunc 'spacing'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'bitwise_and'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'copysign'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'log2'&gt;: FLOAT, &lt;ufunc 'tanh'&gt;: FLOAT, &lt;ufunc 'cosh'&gt;: FLOAT, &lt;ufunc 'modf'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'divmod'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'fmax'&gt;: UNIT_MATCH, &lt;ufunc 'bitwise_or'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'reciprocal'&gt;: NEW_UNIT, &lt;ufunc 'logaddexp'&gt;: FLOAT, &lt;ufunc 'true_divide'&gt;: NEW_UNIT, &lt;ufunc 'arccos'&gt;: FLOAT, &lt;ufunc 'heaviside'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'multiply'&gt;: NEW_UNIT, &lt;ufunc 'ldexp'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'sin'&gt;: FLOAT, &lt;ufunc 'remainder'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'logaddexp2'&gt;: FLOAT, &lt;ufunc 'trunc'&gt;: NO_CONVERSION, &lt;ufunc 'logical_not'&gt;: UNIT_MATCH, &lt;ufunc 'hypot'&gt;: FLOAT, &lt;ufunc 'exp'&gt;: FLOAT, &lt;ufunc 'negative'&gt;: NO_CONVERSION, &lt;ufunc 'left_shift'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'sinh'&gt;: FLOAT, &lt;ufunc 'right_shift'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'logical_and'&gt;: UNIT_MATCH, &lt;ufunc 'exp2'&gt;: FLOAT, &lt;ufunc 'invert'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'cbrt'&gt;: NEW_UNIT, &lt;ufunc 'isinf'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'less'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'arctanh'&gt;: FLOAT, &lt;ufunc 'bitwise_xor'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'isfinite'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'rint'&gt;: NO_CONVERSION, &lt;ufunc 'equal'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'expm1'&gt;: FLOAT, &lt;ufunc 'add'&gt;: UNIT_MATCH, &lt;ufunc 'ceil'&gt;: NO_CONVERSION, &lt;ufunc 'not_equal'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'less_equal'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'sqrt'&gt;: NEW_UNIT, &lt;ufunc 'arctan2'&gt;: FLOAT, &lt;ufunc 'arcsin'&gt;: FLOAT, &lt;ufunc 'fabs'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'logical_or'&gt;: UNIT_MATCH, &lt;ufunc 'conjugate'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'signbit'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'greater_equal'&gt;: UNIT_MATCH_NO_OUT_CAST, &lt;ufunc 'positive'&gt;: NO_CONVERSION, &lt;ufunc 'log'&gt;: FLOAT, &lt;ufunc 'square'&gt;: NEW_UNIT, &lt;ufunc 'cos'&gt;: FLOAT, &lt;ufunc 'floor'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'fmod'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'logical_xor'&gt;: UNIT_MATCH, &lt;ufunc 'arccosh'&gt;: FLOAT, &lt;ufunc 'log1p'&gt;: FLOAT, &lt;ufunc 'power'&gt;: NEW_UNIT, &lt;ufunc 'log10'&gt;: FLOAT, &lt;ufunc 'subtract'&gt;: UNIT_MATCH, &lt;ufunc 'arctan'&gt;: FLOAT, &lt;ufunc 'frexp'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'arcsinh'&gt;: FLOAT, &lt;ufunc 'maximum'&gt;: UNIT_MATCH, &lt;ufunc 'absolute'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'nextafter'&gt;: NOT_IMPLEMENTED, &lt;ufunc 'deg2rad'&gt;: FLOAT, &lt;ufunc 'rad2deg'&gt;: FLOAT, &lt;ufunc 'floor_divide'&gt;: NEW_UNIT, &lt;ufunc 'tan'&gt;: FLOAT, &lt;ufunc 'sign'&gt;: NO_CONVERSION}</em><a class="headerlink" href="#PyMetrology.Unit.UnitValues.UFUNC_MAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.as_ndarray">
+<code class="descname">as_ndarray</code><span class="sig-paren">(</span><em>scale=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.as_ndarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.as_ndarray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.convert">
+<code class="descname">convert</code><span class="sig-paren">(</span><em>prefixed_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the value to another power.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.convert_to_power">
+<code class="descname">convert_to_power</code><span class="sig-paren">(</span><em>power=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.convert_to_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.convert_to_power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the value to another power.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="PyMetrology.Unit.UnitValues.from_ndarray">
+<em class="property">classmethod </em><code class="descname">from_ndarray</code><span class="sig-paren">(</span><em>array</em>, <em>prefixed_unit</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.from_ndarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.from_ndarray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.get_prefixed_unit">
+<code class="descname">get_prefixed_unit</code><span class="sig-paren">(</span><em>power=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.get_prefixed_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.get_prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.is_same_power">
+<code class="descname">is_same_power</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.is_same_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.is_same_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.is_same_unit">
+<code class="descname">is_same_unit</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.is_same_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.is_same_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.power">
+<code class="descname">power</code><a class="headerlink" href="#PyMetrology.Unit.UnitValues.power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.prefixed_unit">
+<code class="descname">prefixed_unit</code><a class="headerlink" href="#PyMetrology.Unit.UnitValues.prefixed_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PyMetrology.Unit.UnitValues.reciprocal">
+<code class="descname">reciprocal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#UnitValues.reciprocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.UnitValues.reciprocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.scale">
+<code class="descname">scale</code><a class="headerlink" href="#PyMetrology.Unit.UnitValues.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PyMetrology.Unit.UnitValues.unit">
+<code class="descname">unit</code><a class="headerlink" href="#PyMetrology.Unit.UnitValues.unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PyMetrology.Unit.ZeroPower">
+<em class="property">class </em><code class="descclassname">PyMetrology.Unit.</code><code class="descname">ZeroPower</code><a class="reference internal" href="../../_modules/PyMetrology/Unit.html#ZeroPower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PyMetrology.Unit.ZeroPower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#PyMetrology.Unit.UnitPrefix" title="PyMetrology.Unit.UnitPrefix"><code class="xref py py-class docutils literal"><span class="pre">PyMetrology.Unit.UnitPrefix</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../development.html" class="btn btn-neutral float-right" title="8. Development &amp; Community" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SiUnits.html" class="btn btn-neutral" title="7.1.3. SiUnits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fabrice Salvaire.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../static/hidecode.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.fabrice-salvaire.fr/";
+    _paq.push(['setTrackerUrl', u+'kiwi']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'kiwi.js';
+  s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://stats.fabrice-salvaire.fr/kiwi?idsite=6&rec=1" style="border:0;" alt="" /></p></noscript>
+
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PyMetrology &mdash; PyMetrology 1. documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/PyMetrology.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyMetrology 1. documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right"
+})});
+</script>
+
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyMetrology
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">2. News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">5. User FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design-notes.html">6. Design Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference-manual.html">7. API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">8. Development &amp; Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-refer.html">9. How to Refer to PyMetrology ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-projects.html">11. Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">12. Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyMetrology</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>PyMetrology</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for PyMetrology</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># PyMetrology - A Unit Package for Python</span>
+<span class="c1"># Copyright (C) 2017 Fabrice Salvaire</span>
+<span class="c1">#</span>
+<span class="c1"># This program is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1"># GNU General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU General Public License</span>
+<span class="c1"># along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c1">#</span>
+<span class="c1">####################################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;This module implements units.</span>
+
+<span class="sd">Shortcuts are defined to build unit values easily :</span>
+
+<span class="sd"> * for each unit prefix, e.g. :func:`pico`, :func:`nano`, :func:`micro`, :func:`milli`, :func:`kilo`,</span>
+<span class="sd">   :func:`mega`, :func:`tera`. These shortcuts return unit less values.</span>
+
+<span class="sd"> * for each unit and prefix as the concatenation of *u_*, the unit prefix and the</span>
+<span class="sd">   unit suffix, e.g. :func:`u_pV`, :func:`u_nV`, :func:`u_uV` :func:`u_mV`, :func:`u_V`,</span>
+<span class="sd">   :func:`u_kV`, :func:`u_MV`, :func:`u_TV`.</span>
+
+<span class="sd">Theses unit value constructors accept int, float, object that can be converted to float,</span>
+<span class="sd">:class:`UnitValue` instance and an iterable on these types.</span>
+
+<span class="sd">A shortcut is defined to check an unit value match a particular unit, e.g. :func:`as_V`.  Theses</span>
+<span class="sd">shortcuts return the value if the unit match else it raises the exception *UnitError*.</span>
+
+<span class="sd">A shortcut is defined to access each unit, e.g. :func:`U_V`, :func:`U_A`, :func:`U_s`, :func:`U_Hz`,</span>
+<span class="sd">:func:`U_Ω`, :func:`U_F`, :func:`U_H.`, as well as for prefixes e.g. :func:`U_mV`.</span>
+
+<span class="sd">Some shortcuts have Unicode and ASCII variants:</span>
+
+<span class="sd"> * For micro, we have the prefix *μ* and *u*.</span>
+<span class="sd"> * For Ohm, we have :func:`u_Ω` and :func:`u_Ohm`.</span>
+
+<span class="sd">Some examples of usage:</span>
+
+<span class="sd">.. code-block:: python3</span>
+
+<span class="sd">  foo = kilo(1) # unit less</span>
+
+<span class="sd">  resistance_unit = U_Ω</span>
+
+<span class="sd">  resistance1 = u_kΩ(1)</span>
+<span class="sd">  resistance1 = u_kOhm(1) # ASCII variant</span>
+
+<span class="sd">  resistance1 = 1@u_kΩ   # using Python 3.5 syntax</span>
+<span class="sd">  resistance1 = 1 @u_kΩ  # space doesn&#39;t matter</span>
+<span class="sd">  resistance1 = 1 @ u_kΩ #</span>
+
+<span class="sd">  resistance2 = as_Ω(resistance1) # check unit</span>
+
+<span class="sd">  resistances = u_kΩ(range(1, 11)) # same as [u_kΩ(x) for x in range(1, 11)]</span>
+<span class="sd">  resistances = range(1, 11)@u_kΩ  # using Python 3.5 syntax</span>
+
+<span class="sd">  capacitance = u_uF(200)</span>
+<span class="sd">  inductance = u_mH(1)</span>
+<span class="sd">  temperature = u_Degree(25)</span>
+
+<span class="sd">  voltage = resistance1 * u_mA(1) # compute unit</span>
+
+<span class="sd">  frequency = u_ms(20).frequency</span>
+<span class="sd">  period = u_Hz(50).period</span>
+<span class="sd">  pulsation = frequency.pulsation</span>
+<span class="sd">  pulsation = period.pulsation</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">Unit</span> <span class="k">as</span> <span class="n">_Unit</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">SiUnits</span> <span class="k">as</span> <span class="n">_SiUnits</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="n">_module_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="n">_version_info</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
+<span class="n">_has_matmul</span> <span class="o">=</span> <span class="n">_version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">_version_info</span><span class="o">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">35</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">_has_matmul</span><span class="p">:</span>
+    <span class="n">_module_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Your Python version doesn&#39;t implement @ operator&quot;</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="UnitValueShorcut"><a class="viewcode-back" href="../api/PyMetrology.html#PyMetrology.UnitValueShorcut">[docs]</a><span class="k">class</span> <span class="nc">UnitValueShorcut</span><span class="p">:</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefixed_unit</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prefixed_unit</span> <span class="o">=</span> <span class="n">prefixed_unit</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_new_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prefixed_unit</span><span class="o">.</span><span class="n">new_value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;self(other)&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__rmatmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;other @ self&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">def</span> <span class="nf">_to_ascii</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">ascii_name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s1">&#39;μ&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;Ω&#39;</span><span class="p">,</span> <span class="s1">&#39;Ohm&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;°C&#39;</span><span class="p">,</span> <span class="s1">&#39;Degree&#39;</span><span class="p">),</span>
+    <span class="p">):</span>
+        <span class="n">ascii_name</span> <span class="o">=</span> <span class="n">ascii_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ascii_name</span>
+
+<div class="viewcode-block" id="define_shortcut"><a class="viewcode-back" href="../api/PyMetrology.html#PyMetrology.define_shortcut">[docs]</a><span class="k">def</span> <span class="nf">define_shortcut</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">shortcut</span><span class="p">)</span> <span class="p">:</span>
+    <span class="c1"># ° is illegal in Python 3.5</span>
+    <span class="c1">#  see https://docs.python.org/3/reference/lexical_analysis.html#identifiers</span>
+    <span class="c1">#      https://www.python.org/dev/peps/pep-3131/</span>
+    <span class="k">if</span> <span class="s1">&#39;°&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+        <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">shortcut</span>
+    <span class="n">ascii_name</span> <span class="o">=</span> <span class="n">_to_ascii</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ascii_name</span> <span class="o">!=</span> <span class="n">name</span><span class="p">:</span>
+        <span class="nb">globals</span><span class="p">()[</span><span class="n">ascii_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">shortcut</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="c1"># Define shortcuts for unit prefixes : ..., micro, milli, kilo, mega, ...</span>
+
+<span class="k">def</span> <span class="nf">_build_prefix_shortcut</span><span class="p">(</span><span class="n">unit_prefix</span><span class="p">):</span>
+    <span class="n">unit_cls_name</span> <span class="o">=</span> <span class="n">unit_prefix</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">unit_cls_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">prefixed_unit</span> <span class="o">=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">PrefixedUnit</span><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="n">unit_prefix</span><span class="p">)</span>
+    <span class="n">_Unit</span><span class="o">.</span><span class="n">PrefixedUnit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">prefixed_unit</span><span class="p">)</span>
+    <span class="n">shortcut</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValue</span><span class="p">(</span><span class="n">prefixed_unit</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">define_shortcut</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">shortcut</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">unit_prefix</span> <span class="ow">in</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitPrefixMetaclass</span><span class="o">.</span><span class="n">prefix_iter</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">unit_prefix</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">!=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">ZeroPower</span><span class="p">:</span>
+        <span class="n">_build_prefix_shortcut</span><span class="p">(</span><span class="n">unit_prefix</span><span class="p">)</span> <span class="c1"># capture unit_prefix</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="c1"># Fixme: better ???</span>
+
+<div class="viewcode-block" id="FrequencyValue"><a class="viewcode-back" href="../api/PyMetrology.html#PyMetrology.FrequencyValue">[docs]</a><span class="k">class</span> <span class="nc">FrequencyValue</span><span class="p">(</span><span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValue</span><span class="p">,</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">FrequencyMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="PeriodValue"><a class="viewcode-back" href="../api/PyMetrology.html#PyMetrology.PeriodValue">[docs]</a><span class="k">class</span> <span class="nc">PeriodValue</span><span class="p">(</span><span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValue</span><span class="p">,</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">PeriodMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="c1"># Define unit shortcuts</span>
+
+<span class="k">def</span> <span class="nf">_build_unit_type_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;U_&#39;</span> <span class="o">+</span> <span class="n">unit</span><span class="o">.</span><span class="n">unit_suffix</span>
+    <span class="n">define_shortcut</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_build_as_unit_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;as_&#39;</span> <span class="o">+</span> <span class="n">unit</span><span class="o">.</span><span class="n">unit_suffix</span>
+    <span class="n">shortcut</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">validate</span>
+    <span class="n">define_shortcut</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">shortcut</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_exec_body</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">unit_prefix</span><span class="p">):</span>
+    <span class="n">ns</span><span class="p">[</span><span class="s1">&#39;__power__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit_prefix</span>
+
+<span class="k">def</span> <span class="nf">_build_unit_prefix_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit_prefix</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;u_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">unit_prefix</span><span class="p">)</span> <span class="o">+</span> <span class="n">unit</span><span class="o">.</span><span class="n">unit_suffix</span>
+    <span class="k">if</span> <span class="n">unit</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">_SiUnits</span><span class="o">.</span><span class="n">Hertz</span><span class="p">:</span>
+        <span class="n">value_ctor</span> <span class="o">=</span> <span class="n">FrequencyValue</span>
+        <span class="n">values_ctor</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Fixme:</span>
+    <span class="k">elif</span> <span class="n">unit</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">_SiUnits</span><span class="o">.</span><span class="n">Second</span><span class="p">:</span>
+        <span class="n">value_ctor</span> <span class="o">=</span> <span class="n">PeriodValue</span>
+        <span class="n">values_ctor</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Fixme:</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">value_ctor</span> <span class="o">=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValue</span>
+        <span class="n">values_ctor</span> <span class="o">=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValues</span>
+    <span class="n">prefixed_unit</span> <span class="o">=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">PrefixedUnit</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit_prefix</span><span class="p">,</span> <span class="n">value_ctor</span><span class="p">,</span> <span class="n">values_ctor</span><span class="p">)</span>
+    <span class="n">_Unit</span><span class="o">.</span><span class="n">PrefixedUnit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">prefixed_unit</span><span class="p">)</span>
+    <span class="n">define_shortcut</span><span class="p">(</span><span class="s1">&#39;U&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">prefixed_unit</span><span class="p">)</span>
+    <span class="n">shortcut</span> <span class="o">=</span> <span class="n">UnitValueShorcut</span><span class="p">(</span><span class="n">prefixed_unit</span><span class="p">)</span>
+    <span class="n">define_shortcut</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">shortcut</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_build_unit_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+    <span class="n">_build_as_unit_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+    <span class="n">_build_unit_type_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">unit_prefix</span> <span class="ow">in</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitPrefixMetaclass</span><span class="o">.</span><span class="n">prefix_iter</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">unit_prefix</span><span class="o">.</span><span class="n">is_defined_in_spice</span><span class="p">:</span>
+            <span class="n">_build_unit_prefix_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit_prefix</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitMetaclass</span><span class="o">.</span><span class="n">unit_iter</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">unit</span><span class="o">.</span><span class="n">unit_suffix</span> <span class="ow">and</span> <span class="n">unit</span><span class="o">.</span><span class="vm">__class__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_SiUnits</span><span class="o">.</span><span class="n">Kilogram</span><span class="p">,):</span>
+        <span class="c1"># Fixme: kilogram</span>
+        <span class="n">_build_unit_shortcut</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="n">unit_value</span> <span class="o">=</span> <span class="n">_Unit</span><span class="o">.</span><span class="n">UnitValue</span><span class="o">.</span><span class="n">simple_value</span>
+
+<span class="n">Frequency</span> <span class="o">=</span> <span class="n">u_Hz</span>
+<span class="n">Period</span> <span class="o">=</span> <span class="n">u_s</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fabrice Salvaire.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/hidecode.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.fabrice-salvaire.fr/";
+    _paq.push(['setTrackerUrl', u+'kiwi']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'kiwi.js';
+  s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://stats.fabrice-salvaire.fr/kiwi?idsite=6&rec=1" style="border:0;" alt="" /></p></noscript>
+
+
+</body>
+</html>
