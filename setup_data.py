@@ -73,7 +73,7 @@ else:
 ####################################################################################################
 
 setup_dict = dict(
-    name='metrology', # pymetrology PyMetrology
+    name='pytrology',
     version='0.1.0',
     author='Fabrice Salvaire',
     author_email='fabrice.salvaire@orange.fr',
