@@ -73,13 +73,13 @@ else:
 ####################################################################################################
 
 setup_dict = dict(
-    name='PyMetrology',
-    version='1.',
+    name='metrology', # pymetrology PyMetrology
+    version='0.1.0',
     author='Fabrice Salvaire',
     author_email='fabrice.salvaire@orange.fr',
-    description='...',
+    description='An unit framework for Python 3',
     license='GPLv3',
-    keywords= '...',
+    keywords= 'unit si',
     url='https://github.com/FabriceSalvaire/PyMetrology',
     scripts=[],
     packages=['PyMetrology', # Fixme:
@@ -97,12 +97,13 @@ setup_dict = dict(
     classifiers=[
         'Topic :: Scientific/Engineering',
         'Intended Audience :: Education',
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 2 - Pre-Alpha',
+        # 'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.5',
         ],
-    requires=[
+    install_requires=[
         'PyYAML',
         'numpy',
     ],
